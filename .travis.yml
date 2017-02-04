@@ -1,24 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - $HOME/.npm
-    - $HOME/.cache # includes bowers cache
-
+  - "$HOME/.npm"
+  - "$HOME/.cache"
 before_install:
-  - npm config set spin false
-  - npm install -g bower phantomjs-prebuilt
-  - bower --version
-  - phantomjs --version
-
+- npm config set spin false
+- npm install -g bower phantomjs-prebuilt
+- bower --version
+- phantomjs --version
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: XoM8PE7j1J0ZDk/GPoHlbR99W/35Ez+g4lYww73lq5KBIm6Dei4ANUzZM1a+FKoYjwW+YSOBHVdgqV00l9j/5lJTePLm1WIeBa03Lw/QoIK2mkpVPFGTmE0tOwKJCKbFgmMoIRzGMxDVmpRz16XXqMc4oVGMTeYtvQ10z3ShfWBlRmRnNRRo/0ur0yePiEq32jNStgzKfhan95Ke0273YRFlZDrJAZCMDv/iTQk1ekchwx40rB1mWfeMS7dKHCLqRBDAu5X4QM0Nx4hAVbpj74qSayzl9zQlGT939iLNMH+w2P18/akxdHPuz7b9M+Oo0nkUd0cJQaaqNJuoZPt2AjNi0LPRBPn/OQkiQUohlsEZp7rWSls8BjVtfISjBSpdOFjT2/J/kc7VtD0sPt9BRpyIjEDXiU4zA68FTfyZY5K28VBNgWRNIIWL9eStItQrU43dDRdNvH9FzJ1OvmjijZ8AOWS4sIQhhk7ymCvAqp/N2fERewwvhgJLylpKdsy/qLUYHaYfTAhPIc2MDyhgJ9Adri6R2sMDNpiMlmZuWGqjob7PEpE3ONhPhOoQjH+4f9CeMvev/PMp3Kul97Y9wIno9k+jUIJbXaQcPDqFv1Lg3jK4RRxzYnmoz1DDyGbODjtHtlmS4Mdzcts2l/ALSMFyMELugBMSrhRmPBTuUMc=
+  app: floating-peak-86565
