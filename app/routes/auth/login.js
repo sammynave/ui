@@ -9,5 +9,11 @@ export default Route.extend({
     doLogin() {
       alert('login attempted');
     }
+  },
+  model() {
+    return {
+      email: '',
+      password: ''
+    };
   }
 });
