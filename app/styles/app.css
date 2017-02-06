@@ -40,3 +40,8 @@ body {
     }
   }
 }
+
+.liquid-container {
+  transform: none;
+  -webkit-transform: none;
+}
