@@ -1,13 +1,16 @@
 import Ember from 'ember';
 
-const {
-  Route
-} = Ember;
+const { Route, inject } = Ember;
 
 export default Route.extend({
+  session: inject.service(),
   actions: {
     doLogin() {
-      alert('login attempted');
+      const user = this.get('currentModel');
+      this.get('session')
+        .authenticate(
+          'authenticator:chat', user.email, user.password
+        );
     }
   },
   model() {
