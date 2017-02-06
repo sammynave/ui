@@ -1,0 +1,7 @@
+$roboto-font-path: '/assets/';
+
+@import "materialize";
+
+body {
+  background-color: color('indigo', 'darken-1');
+}
