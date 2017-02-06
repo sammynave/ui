@@ -3,3 +3,11 @@ $roboto-font-path: '../assets/';
 
 // Materialize styles
 @import "materialize";
+
+.create-room {
+  .col {
+    .btn-flat {
+      margin-top: 1.5rem;
+    }
+  }
+}
