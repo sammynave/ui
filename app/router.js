@@ -2,8 +2,7 @@ import Ember from 'ember';
 import config from './config/environment';
 
 const Router = Ember.Router.extend({
-  location: config.locationType,
-  rootURL: config.rootURL
+  location: config.locationType
 });
 
 Router.map(function() {
@@ -12,7 +11,9 @@ Router.map(function() {
     this.route('register');
   });
   this.route('app', function() {
-    this.route('index');
+    this.route('room', {
+      path: 'room/:room_id'
+    }, function() {});
   });
 });
 
