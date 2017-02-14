@@ -2,9 +2,7 @@ import Ember from 'ember';
 
 const {
   inject,
-  get,
-  on,
-  computed
+  get
 } = Ember;
 
 export default Ember.Route.extend({

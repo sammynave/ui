@@ -1,7 +1,7 @@
 import PhoenixSocket from 'phoenix/services/phoenix-socket';
+import Ember from 'ember';
 
 const {
-  Route,
   inject,
   get
 } = Ember;
@@ -13,10 +13,10 @@ export default PhoenixSocket.extend({
     // You may listen to open, 'close' and 'error'
     this.on('open', () => {
       console.log('Socket was opened!');
-    })
+    });
   },
 
-  connect(id) {
+  connect(/* id */) {
     const myjwt = get(this, 'session.session.content.authenticated.access_token');
     // connect the socket
     this._super('ws://localhost:4000/socket', {
@@ -27,12 +27,12 @@ export default PhoenixSocket.extend({
       user: get(this, 'session.currentUser.email')
     });
 
-    channel.on('ignore', () => console.log("auth_error"))
-    channel.on('ok', () => console.log("join ok"))
+    channel.on('ignore', () => console.log("auth_error"));
+    channel.on('ok', () => console.log("join ok"));
 
     channel.on('new:message', (msg) => {
-      console.log('new:message')
-      console.log(msg)
+      console.log('new:message');
+      console.log(msg);
       get(this, 'store').push(msg);
       console.log('push messages into store');
     });
@@ -40,6 +40,6 @@ export default PhoenixSocket.extend({
     channel.on("user:entered", (msg) => {
       console.log('user:entered');
       console.log(msg);
-    })
+    });
   }
 });
