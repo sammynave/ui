@@ -1,5 +1,6 @@
 import PhoenixSocket from 'phoenix/services/phoenix-socket';
 import Ember from 'ember';
+import config from 'ui/config/environment';
 
 const {
   inject,
@@ -19,7 +20,7 @@ export default PhoenixSocket.extend({
   connect(/* id */) {
     const myjwt = get(this, 'session.session.content.authenticated.access_token');
     // connect the socket
-    this._super('ws://localhost:4000/socket', {
+    this._super(config.ws, {
       params: { token: myjwt }
     });
     // join a channel
