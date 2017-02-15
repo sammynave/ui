@@ -61,7 +61,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.DS.host = 'https://rocky-beach-94063.herokuapp.com/'
+    ENV.DS.host = 'https://rocky-beach-94063.herokuapp.com'
     ENV.DS.ws = 'wss://rocky-beach-94063.herokuapp.com/socket';
     console.log(ENV.DS);
   }
