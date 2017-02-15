@@ -20,7 +20,7 @@ export default PhoenixSocket.extend({
   connect(/* id */) {
     const myjwt = get(this, 'session.session.content.authenticated.access_token');
     // connect the socket
-    this._super(config.ws, {
+    this._super(config.DS.ws, {
       params: { token: myjwt }
     });
     // join a channel
