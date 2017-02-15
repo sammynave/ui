@@ -1,0 +1,10 @@
+{{#user-info as |u|}}
+  {{#each model.messages as |message|}}
+    <div class="message {{if (eq u.id message.owner.id) "them" "me"}}">
+      <div class="body">
+        {{message.body}}
+        <div class="timestamp">{{moment-from-now message.insertedAt}}</div>
+      </div>
+    </div>
+  {{/each}}
+{{/user-info}}

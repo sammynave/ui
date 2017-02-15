@@ -2,31 +2,29 @@
   <div class="row">
     <div class="col s12 m8 offset-m2">
 
-      {{#x-card
-      title='Rooms'}}
-      <ul class="collection">
-
+      {{#x-card title='Rooms'}}
+        <ul class="collection">
         {{#each model.rooms as |room|}}
-        <li class="collection-item avatar">
-          <i class="material-icons green circle">chat</i>
-          <span class="title">{{room.name}}</span>
-          <p class="grey-text">Owner: {{room.owner.email}}</p>
-          <span class="secondary-content">
+          <li class="collection-item avatar" onclick={{route-action 'enterRoom' room}}>
+            <i class="material-icons green circle">chat</i>
+            <span class="title">{{room.name}}</span>
+            <p class="grey-text">Owner: {{room.owner.email}}</p>
+            <span class="secondary-content">
 
-            {{!-- REMOVE ROOM BUTTON --}}
-            <i class="material-icons red-text"
-              onclick={{route-action 'removeRoom' room}}>
-              remove_circle
-            </i>
+              {{!-- REMOVE ROOM BUTTON --}}
+              <i class="material-icons red-text"
+                onclick={{route-action 'removeRoom' room}}>
+                remove_circle
+              </i>
 
-          </span>
-        </li>
-        {{else}}
-        <li class="collection-item">
-          No rooms yet ☹️
-        </li>
-        {{/each}}
-      </ul>
+            </span>
+          </li>
+          {{else}}
+          <li class="collection-item">
+            No rooms yet ☹️
+          </li>
+          {{/each}}
+        </ul>
       {{/x-card}}
 
       {{#x-card

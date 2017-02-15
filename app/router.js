@@ -11,9 +11,7 @@ Router.map(function() {
     this.route('register');
   });
   this.route('app', function() {
-    this.route('room', {
-      path: 'room/:room_id'
-    }, function() {});
+    this.route('room', { path: 'room/:room_id' }, function() {});
   });
 });
 

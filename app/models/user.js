@@ -4,5 +4,6 @@ export default DS.Model.extend({
   email: DS.attr('string'),
   password: DS.attr('string'),
   passwordConfirmation: DS.attr('string'),
-  rooms: DS.hasMany('room')
+  rooms: DS.hasMany('room'),
+  messages: DS.hasMany('message')
 });
