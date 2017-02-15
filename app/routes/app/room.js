@@ -16,7 +16,6 @@ export default Ember.Route.extend({
       }).catch(() => {
         this.get('flashMessages').danger('problem posting message');
       });
-
     }
   },
   model() {

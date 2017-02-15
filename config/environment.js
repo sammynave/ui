@@ -46,7 +46,6 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
-    ENV.DS.host = 'http://localhost:4200/'
     ENV.DS.ws = 'ws://localhost:4000/socket';
   }
 
@@ -64,6 +63,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.DS.host = 'https://rocky-beach-94063.herokuapp.com/'
     ENV.DS.ws = 'wss://rocky-beach-94063.herokuapp.com/socket';
+    console.log(ENV.DS);
   }
 
   return ENV;
