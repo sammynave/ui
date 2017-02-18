@@ -35,7 +35,7 @@ module.exports = function(environment) {
      extendedTimeout: 375
     },
     fastboot: {
-      hostWhitelist: ['https://floating-peak-86565.herokuapp.com', 'floating-peak-86565.herokuapp.com', /^localhost:\d+$/]
+      hostWhitelist: ['https://floating-peak-86565.herokuapp.com', /^localhost:\d+$/]
     }
   };
 
@@ -61,9 +61,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.DS.host = 'https://rocky-beach-94063.herokuapp.com'
+    ENV.DS.host = 'https://rocky-beach-94063.herokuapp.com';
     ENV.DS.ws = 'wss://rocky-beach-94063.herokuapp.com/socket';
-    console.log(ENV.DS);
   }
 
   return ENV;
