@@ -31,7 +31,7 @@ export default Ember.Route.extend({
   },
   afterModel(model) {
     this._super(...arguments);
-    const socket = this.get('phoenix').connect();
+    this.get('phoenix').connect();
     const channel = this.get('phoenix').joinChannel(`rooms:${get(model, 'room.id')}`);
 
     channel.on('ignore', () => console.log("auth_error"));
