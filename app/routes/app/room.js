@@ -38,7 +38,7 @@ export default Ember.Route.extend({
     channel.on('ok', () => console.log("join ok"));
 
     channel.on('new:message', (payload) => {
-      let message = get(this, 'store').push(payload.message);
+      let message = get(this, 'store').push(payload);
       this.get('currentModel.room.messages').addObject(message);
     });
 

@@ -13,7 +13,7 @@ export default PhoenixSocket.extend({
   connect() {
     const myjwt = get(this, 'session.session.content.authenticated.access_token');
     this._super(config.DS.ws, {
-      params: { token: myjwt }
+      params: { guardian_token: myjwt }
     });
   }
 });
