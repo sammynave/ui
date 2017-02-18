@@ -35,7 +35,7 @@ module.exports = function(environment) {
      extendedTimeout: 375
     },
     fastboot: {
-      hostWhitelist: ['floating-peak-86565.herokuapp.com', /^localhost:\d+$/]
+      hostWhitelist: ['https://floating-peak-86565.herokuapp.com', 'floating-peak-86565.herokuapp.com', /^localhost:\d+$/]
     }
   };
 
